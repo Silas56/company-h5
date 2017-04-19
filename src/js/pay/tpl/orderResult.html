@@ -1,0 +1,40 @@
+<div class="countdown">
+	请在<span class="countdown-time" data-time="${userOrderBean.orderTime}"></span>内支付，超时未支付将取消订单
+</div>
+<div class="con">
+	<p class="order-code">
+		订单编码：${userOrderBean.orderCode}
+	</p>
+	<div class="info-con">
+		<!-- for: ${productList} as ${item},${index} -->
+		<div class="item" data-ordercode="${item.productCode}">
+			<div class="info">
+				<h2><a href="../detail/detail.html?shopCode=${shopInfo.shopCode}&productCode=${item.productSpu}">${item.productName}</a></h2>
+				<p>商品规格：
+					<span>${item.spec}</span>
+				</p>
+				<!-- if: ${userOrderBean.useDate} -->
+				<p class="date">使用日期：${userOrderBean.useDate|timeFormat}</p>
+				<!-- /if -->
+			</div>
+			<p class="price">
+				<span>￥${item.price|univalent(${item.price},${item.num})}</span>
+				<span>x ${item.num}</span>
+			</p>
+		</div>
+		<!-- /for -->
+	</div>
+	<p class="total-price">
+		应付金额：<span>￥${userOrderBean.orderCountPrice}</span>
+	</p>
+</div>
+<div class="pay-type">
+	<h3>支付方式</h3>
+	<div class="pay-list">
+		<!-- if: ${''|isWechatNative} -->
+		<p class="wechatpay">微信支付</p>
+		<!-- else -->	
+		<p class="alipay selected">支付宝支付</p>
+		<!-- /if -->
+	</div>
+</div>

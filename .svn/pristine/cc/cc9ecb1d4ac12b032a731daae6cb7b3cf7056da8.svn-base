@@ -1,0 +1,12 @@
+<!-- for:${comments} as ${comment} -->
+<li>
+	<div class="cm-info">
+		<a href="#" class="name">${comment.userName}</a>
+		<!-- <span class="score"><em style="width:${comment.grade|scoreFormat}%;"></em></span> -->
+		<time>${comment.commentTime}</time>
+	</div>
+	<div class="cm-con">
+		${comment.content|raw}
+	</div>
+</li>
+<!-- /for -->

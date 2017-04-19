@@ -1,0 +1,39 @@
+
+
+<div class="content" id="mynews">
+  <!-- for: ${myNews} as ${myNew} -->
+  <!-- if: ${myNew.noticeType} == '1' -->
+  <div class="news_con order" oc="${myNew.orderNo}" os="${myNew.orderStatus}">
+  <!-- else -->
+  <div class="news_con">
+  <!-- /if -->
+    <div class="news_con_l">
+      <!-- if: ${myNew.noticeType} == '1' -->
+      <img src="../../images/home/u20.png">
+      <!-- else -->
+      <img src="../../images/home/u18.png">
+      <!-- /if -->
+    </div>
+    <div class="news_con_r">
+      <div class="news_con_r_top">
+        <!-- if: ${myNew.noticeType} == '1' -->
+        <div class="news_con_r_top_l">交易信息</div>
+        <!-- else -->
+        <div class="news_con_r_top_l">系统信息</div>
+        <!-- /if -->
+        <div class="news_con_r_top_r">${myNew.noticeTime}</div>
+      </div>
+      <!-- if: ${myNew.noticeType} == 1 -->
+	  <div class="news_con_r_mid">${myNew.orderName}</div>
+      <div class="news_con_r_bottom">
+        <a href="">
+          <span class="icon icon-right"></span>
+        </a>
+      </div>
+	  <!-- else -->
+      <div class="news_con_r_mid">${myNew.noticeContent}</div>
+      <!-- /if -->
+    </div>
+  </div>
+  <!-- /for -->
+</div>

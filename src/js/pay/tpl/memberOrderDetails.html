@@ -1,0 +1,279 @@
+<div class="content">
+
+  <div class="tabs" id="notpay_tabs">
+
+    <div id="tab1" class="tab active">
+      
+      <div class="order_listall">
+        <!-- if:${orderDetails.userOrderBean.payStatus}=='2' && ${intDiff}>0 -->
+         
+          <!-- if:${orderDetails.userOrderBean.orderStatus}=='1' -->
+          <div class="order_mg">                  
+            <div class="order_mg_text">商家将在
+              <span class="time-item">
+                  <span id="hour_show"></span>
+                  <span id="minute_show"></span>
+                  <span id="second_show"></span>
+              </span>内处理该订单，请耐心等待
+            </div>      
+          </div>
+          <!-- elif:${orderDetails.userOrderBean.orderStatus}=='2' -->
+           <div class="order_mg">                  
+            <div class="order_mg_text">请在
+              <span class="time-item">
+                  <span id="hour_show"></span>
+                  <span id="minute_show"></span>
+                  <span id="second_show"></span>
+              </span>内支付。超时未支付将取消该订单！
+            </div>      
+          </div>
+          <!-- /if -->
+        <!-- /if -->
+       
+
+        <div class="order_list" id="notpay_order_list">
+          <div class="order_content">
+            <div class="content_heading">
+
+              <div class="heading_right">
+                <!-- if:${orderDetails.userOrderBean.orderStatus}=='1' -->
+                <span>待支付 待确认</span>
+              
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='2' -->
+                <span>待支付 已确认</span>
+         
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='3' -->
+                <span>已取消</span>
+           
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='4' -->
+                <span>已支付 已确认</span>
+         
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='5' -->
+                <span>交易关闭 等待退款</span>
+     
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='6' -->
+                <span>交易关闭 仲裁退款中</span>
+
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='7' -->
+                <span>交易关闭 退款成功</span>
+            
+				        <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='8' -->
+                <span>交易成功</span>
+                <!-- /if -->
+                <!-- /if -->
+              </div>
+              
+              <div class="heading_left">
+                <span class="head_num">订单编号:</span>
+                <span class="head_true">${orderDetails.userOrderBean.orderCode}</span>
+              </div>
+              
+            </div>
+            <!-- for: ${orderDetails.productList} as ${item},${index} -->
+            <div class="content_mid" data-shopcode = "${orderDetails.shopInfo.shopCode}" data-productCode = "${item.productSpu}">
+              <div class="mid_left">
+                <div class="mid_img">
+                  <img src="${item.cover}">
+                </div>
+              </div>
+
+              <div class="mid_right">                       
+                <div class="mid_title">
+                  <div class="title_span">${item.productName}</div>
+                </div>
+                <div class="mid_specifications">
+                  <div class="s_right">
+                    <p class="s_right_p">商品规格：</p>${item.spec}
+                  </div>
+                  <!-- if:${item.useData} -->
+                  <div class="s_right">
+                    <p class="s_right_p">使用日期：</p>${item.useDate|dateFormat}
+                  </div>
+                  <!-- /if -->
+                  <div class="s_right">
+                    <p class="s_right_p">价格：</p>￥ ${item.price}
+                  </div>
+                  <div class="s_right">
+                    <p class="s_right_p">数量：</p>${item.num}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /for -->
+            <div class="content_footing">
+              <div class="foot_tex">
+                总 金 额：￥ <strong>${orderDetails.userOrderBean.orderCountPrice}</strong>
+              </div>
+			  <div class="refundStatus">
+				<!-- if: ${orderDetails.userOrderBean.orderStatus}=='8' && ${orderDetails.orderRefundInfo.refundStatus}=='1' -->
+                <span>仲裁退款中</span>
+				
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='8' && ${orderDetails.orderRefundInfo.refundStatus}=='2' -->
+                <span>仲裁退款拒绝</span>
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='8' && ${orderDetails.orderRefundInfo.refundStatus}=='3' -->
+                <span>仲裁取消</span>             
+
+                <!-- elif:${orderDetails.userOrderBean.orderStatus}=='8' && ${orderDetails.orderRefundInfo.refundStatus}=='4' -->
+                <span>仲裁退款成功</span>
+                <!-- /if -->
+			  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+    </div>                                
+  </div>
+
+  <!-- 消费验证码 -->
+  <!-- if: ${orderDetails.consumerCodeBean.consumerCode} !=='' -->
+  <div class="order_code">
+     <div class="order_code_contacts_mg">
+      <p>消费验证码:${orderDetails.consumerCodeBean.consumerCode}</p>
+      <p class="paied">
+		  <!-- if: ${orderDetails.consumerCodeBean.consumerCodeStatus} ===1 -->
+		  未使用
+		  <!-- elif: ${orderDetails.consumerCodeBean.consumerCodeStatus} ==2 -->
+	   	已使用
+		
+		  <!-- /if -->
+	  </p>
+    </div>
+  </div>
+  <!-- /if -->
+
+  <!-- 店铺信息 -->
+  <div class="order_shop">
+    <div class="shop_title">
+      <div class="title_tex">
+        店铺信息
+      </div>
+    </div>
+
+	<a href="../index/index.html?shopCode=${orderDetails.shopInfo.shopCode}">
+		<div class="shop_mid">
+		  <div class="mid_left">
+			<img src="${orderDetails.shopInfo.shopLogoImg}">
+		  </div>
+		  <div class="shop_right">
+			<p>${orderDetails.shopInfo.shopName}</p>
+			<p id="shop_phonenum">${orderDetails.shopInfo.mobile}</p>
+		  </div>
+		</div>
+	</a>
+
+    <div class="shop_foot">
+      <div class="foot_btn">
+        <div class="r_btn button button-dark left"><a href="../index/index.html?shopCode=${orderDetails.shopInfo.shopCode}"><img class="shop_img" src="../../images/home/u99.png">进入店铺</a></div>
+        <div class="r_btn button button-dark right"><a href="tel:${orderDetails.shopInfo.mobile}" class="external"><img class="shop_img" src="../../images/home/u104.png">联系商家</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 联系 -->
+  <div class="contacts">
+    <div class="contacts_title">
+      <div class="contacts_title_tex">
+        联系人
+      </div>
+    </div>
+    <div class="contacts_mg">
+      <span>${orderDetails.userOrderContactInfo.name}</span>
+      <span>${orderDetails.userOrderContactInfo.mobile}</span>
+    </div>
+  </div>
+
+  <!-- for:${userOrderPlayerInfoBean} as ${userInfoBean} ,${index} -->
+  <div class="contacts">
+    <div class="contacts_title">
+      <div class="contacts_title_tex">
+        旅客 ${index | indexFormat}
+      </div>
+    </div>
+    <div class="contacts_mg">
+      <span>${userInfoBean.name}</span>
+      <span>${userInfoBean.mobile}</span>
+    </div>
+    <!-- if:${userInfoBean.certType} > 0 -->
+    <p class="certType">
+      <span>${userInfoBean.certType | formatCertType}</span>
+      <span>${userInfoBean.certNo}</span>
+    </p>
+    <!-- /if -->
+  </div>
+  <!-- /for -->
+
+  
+
+  <div class="Creation_time" id="cre_successpaurefund">
+    <div class="Creation_time_contacts_mg">
+      <p>创建时间：${orderDetails.userOrderBean.orderTime|timeFormat}</p>
+
+	  <!-- for:${orderDetails.orderPayInfoBean} as ${payInfo} -->
+		  <!-- if: ${payInfo.payment} -->
+		  <p>支付方式：${payInfo.payment}</p>
+		  <!-- /if -->
+		  
+		  <!-- if: ${payInfo.payTime}-->
+		  <p>支付时间：${payInfo.payTime|timeFormat}</p>
+		  <!-- /if -->
+	<!-- /for -->	
+		
+      <!-- if: ${orderDetails.consumerCodeBean.consumerCodeCheckTime && orderDetails.consumerCodeBean.consumerCodeCheckTime!='0'} -->
+      <p>验证时间：${orderDetails.consumerCodeBean.consumerCodeCheckTime|timeFormat}</p>
+      <!-- /if -->
+
+    </div>
+  </div>
+
+  <!-- if: ${orderDetails.userOrderBean.orderStatus}=='8' && ${orderDetails.orderRefundInfo.refundStatus}=='4' -->
+  <div class="refund_time">
+    <div class="refund_time_contacts_mg">
+      <p>退款金额：${orderDetails.orderRefundInfo.refundAmount}</p>
+      <p>退款时间：${orderDetails.orderRefundInfo.refundTime|timeFormat}</p>
+    </div>
+  </div>
+  <!-- /if -->	
+  <div class="order_operation">
+	  <input type="hidden" value="${orderDetails.userOrderBean.orderCode}" class="orderCode" />
+	  <input type="hidden" value="${orderDetails.userOrderBean.arbitrationCode}" class="arbitrationCode" />
+	  <input type="hidden" value="${orderDetails.orderPayInfoBean[0].paymentCode}" class="paymentCode" />
+	  <input type="hidden" value="${orderDetails.userOrderBean.orderStatus}" class="orderStatus" />
+    <!-- if: ${orderDetails.userOrderBean.orderStatus}=='1' -->
+    <div class="r_btn button button-dark cancelOrder">取消订单</div>
+
+    <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='2' -->
+    <div class="r_btn button button-dark cancelOrder">取消订单</div>
+    <div class="r_btn button button-fill button-danger pay">立即支付</div>
+
+    <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='4' -->
+    <div class="r_btn button button-dark refund">申请退款</div>
+	  <div class="r_btn button button-dark resendResume">重发消费码</div>
+
+    <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='5' -->
+    <div class="r_btn button button-dark cancelRefund">取消申请</div>
+
+    <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='8' && (${orderDetails.orderRefundInfo.refundStatus}=='0' || ${orderDetails.orderRefundInfo.refundStatus}=='3') -->
+    <div class="r_btn button button-dark applyArbitration">申请仲裁退款</div>
+	  <div class="r_btn button button-dark evaluate">评价</div>
+
+    <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='12' -->
+    <div class="r_btn button button-dark evaluate">评价</div>
+	  <div class="r_btn button button-dark cancelArbitration">取消仲裁</div>
+
+    <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='13'&&${orderDetails.userOrderBean.payStatus}=='11' -->
+    <div class="r_btn button button-dark evaluate">评价</div>
+	
+	  <!-- elif: ${orderDetails.userOrderBean.orderStatus}=='8' && (${orderDetails.orderRefundInfo.refundStatus}=='1' || ${orderDetails.orderRefundInfo.refundStatus}=='2' || ${orderDetails.orderRefundInfo.refundStatus}=='4') -->
+    <div class="r_btn button button-dark evaluate">评价</div>
+    <!-- /if -->
+    <!-- <div class="l_btn button button-dark tradeSnapshot">交易快照</div> -->
+  </div>
+</div>

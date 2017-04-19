@@ -1,0 +1,12 @@
+<!-- for: ${data} as ${item},${index} -->
+<div class="o-type-item" data-proId='${item.specId}' data-index="${index}">
+	<h5>${item.specName}</h5>
+	<p>
+		<!-- for: ${item.productSpecItemList} as ${pitem},${pindex} -->
+		
+		<span data-itemId='${pitem.specItemId}'>${pitem.specItemName}</span>
+
+		<!-- /for-->
+	</p>
+</div>
+<!-- /for -->

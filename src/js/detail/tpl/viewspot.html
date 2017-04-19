@@ -1,0 +1,22 @@
+<div class="swiper-container" data-space-between='10'>
+	<div class="swiper-wrapper">
+		<!-- for: ${gallerys} as ${item}, ${index} -->
+		<div class="swiper-slide">
+			<img src="${item}" alt="" class="intro-top">
+		</div>
+		<!-- /for -->
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+<h1>${viewspot.title}</h1>
+<div class="info-list">
+<ul>
+	<!-- if: ${hotel.openHours} -->
+	<li class="star ic-time">开放时间：${viewspot.openHours}</li>
+	<!-- /if -->
+	<!-- if: ${hotel.address} -->
+	<li class="address ic-address">地址：${viewspot.address}</li>
+	<!-- /if -->
+</ul>
+<div class="desc">${viewspot.content}</div>
+</div>

@@ -1,0 +1,55 @@
+<div class="shop-merchant">
+    <div class="info">
+        <div class="info-head clearfix">
+            <div class="info-left">
+                <!-- if: ${shopLogoImg} -->
+                <img src="${shopLogoImg}" class="merchant-logo" width="80" />
+                <!-- else -->
+                <img src="../../images/home/kooniao.jpg" class="merchant-logo"  width="90"/>
+                <!-- /if -->
+            </div>
+            <div class="info-right">
+                <h1>${shopName}</h1>
+                <div class="star">
+                    <!-- if: ${shopScore} > 0  -->
+                    <ul>
+                        <!-- for: ${scoreList} as ${scoreItem} -->
+                        <li><span style="width:${scoreItem};"></span></li>
+                        <!-- /for -->
+                    </ul>
+                    <span class="score">${shopScore}分</span>
+                    <!-- /if -->
+                </div>
+            </div>
+        </div>
+         <!-- if: ${mobiles[0]}  -->
+        <div class="phone">
+            <div class="number">联系电话（默认）：${mobiles[0]}</div>
+            <a class="call external" href="tel:${mobiles[0]}"></a>
+        </div>
+         <!-- /if -->
+
+           <!-- if: ${mobiles[1]}  -->
+        <div class="phone">
+            <div class="number">联系电话1：${mobiles[1]}</div>
+            <a class="call external" href="tel:${mobiles[1]}"></a>
+        </div>
+         <!-- /if -->
+
+           <!-- if: ${mobiles[2]}  -->
+        <div class="phone">
+            <div class="number">联系电话2：${mobiles[2]}</div>
+            <a class="call external" href="tel:${mobiles[2]}"></a>
+        </div>
+         <!-- /if -->
+
+        <!-- if: ${address} -->
+        <div class="address">
+            <div class="dizhi">实体店地址：${province}${city}${zone}${address}</div>
+        </div>
+        <!-- /if -->
+        <div class="introduce">
+            ${shopIntroduction}
+        </div>
+    </div>
+</div>

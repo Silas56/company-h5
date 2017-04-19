@@ -1,0 +1,15 @@
+<!-- for: ${data} as ${item},${index} -->
+<li>
+	<p class="u-t">旅客${index|travelerIndex}</p>
+	<p class="u-cn"><input type="text" name="contactName" placeholder="请输入名字" value="${item.name}" maxlength="10"></p>
+	<p class="u-cp"><input type="text" name="contactPhone" placeholder="请输入手机号码" maxlength="11" value="${item.mobile}"></p>
+	<p class="u-ccard">
+		<!-- if:${item.certType} -->
+		<span data-type="${item.certType}" class="contactType">${item.certTypeTxt}</span>
+		<!-- else -->
+		<span data-type="1" class="contactType">身份证</span>
+		<!-- /if -->
+		<input type="text" name="contactCertNumber" placeholder="请输入证件号码" maxlength="18" value="${item.certNumber}">
+	</p>
+</li>
+<!-- /for-->

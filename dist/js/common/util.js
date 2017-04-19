@@ -1,0 +1,1 @@
+var util={getQueryString:function(n){var e=new RegExp("(^|&)"+n+"=([^&]*)(&|$)","i"),t=window.location.search.substr(1).match(e);return null!=t?decodeURIComponent(t[2]):null}};

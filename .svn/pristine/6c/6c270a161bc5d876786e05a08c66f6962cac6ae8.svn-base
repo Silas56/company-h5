@@ -1,0 +1,45 @@
+<!-- for: ${shops} as ${shop} -->
+<div class="content-block">
+  <div class="product_list">
+    <input type="hidden" class="shopCode" value="${shop.shopOutCode}"/>
+    <div class="product_list_l">
+      <!-- if: ${shop.shopLogoImg} -->
+        <img src="${shop.shopLogoImg}">
+      <!-- else -->
+        <img src="../../images/home/shop_default.jpg" />
+      <!-- /if -->
+    </div>
+    <div class="product_list_r">
+      <div class="product_list_r_title">${shop.shopName}</div>
+      <!-- if: ${shop.owner} == 1 -->
+          <span class="product_list_r_role">店铺拥有者</span>
+      <!-- else -->
+          <span class="product_list_r_role">${shop.roleName}</span>
+      <!-- /if -->
+
+      <!-- if: ${shop.shopStatus} == 1 -->
+        <span class="product_list_r_status">  (审核中)</span>
+      <!-- /if -->  
+
+      <!-- if: ${shop.shopStatus} == 2 -->
+        <span class="product_list_r_status">  (正常营业)</span>
+      <!-- /if -->
+
+      <!-- if: ${shop.shopStatus} == 3 -->
+        <span class="product_list_r_status">  (审核未通过)</span>
+      <!-- /if -->  
+
+      <!-- if: ${shop.shopStatus} == 4 -->
+        <span class="product_list_r_status">  (暂停营业)</span>
+      <!-- /if -->  
+
+      <!-- if: ${shop.shopStatus} == 5 -->
+        <span class="product_list_r_status">  (已冻结)</span>
+      <!-- /if -->   
+    </div>
+    <div class="product_list_r2">
+    	<span class="icon icon-right"></span>
+    </div>
+  </div>
+</div>
+<!-- /for -->

@@ -1,0 +1,36 @@
+<div class="detail-container">
+	<div class="swiper-container" data-space-between='10'>
+		<div class="swiper-wrapper">
+			<!-- for: ${gallerys} as ${item}, ${index} -->
+			<div class="swiper-slide">
+				<img src="${item}" alt="" class="intro-top">
+			</div>
+			<!-- /for -->
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+<h1>${hotel.title}</h1>
+<div class="info-list">
+	<ul>
+		<!-- if: ${hotel.star} -->
+		<li class="star ic-star">酒店评级：${hotel.star}</li>
+		<!-- /if -->
+		<!-- if: ${hotel.contact} -->
+		<li class="call ic-phone">酒店电话：${hotel.contact}</li>
+		<!-- /if -->
+		<!-- if: ${hotel.address} -->
+		<li class="address ic-address">酒店地址：${hotel.address}</li>
+		<!-- /if -->
+		<!-- if: ${hotel.service} -->
+		<li class="service ic-service">酒店服务：${hotel.service}</li>
+		<!-- /if -->
+		<!-- if: ${hotel.roomFacilities} -->
+		<li class="home ic-home">房间设施：${hotel.roomFacilities}</li>
+		<!-- /if -->
+		<!-- if: ${hotel.foodFacilities} -->
+		<li class="equipment ic-equipment">餐饮设施：${hotel.foodFacilities}</li>
+		<!-- /if -->
+	</ul>
+	<div class="desc">${hotel.content}</div>
+</div>

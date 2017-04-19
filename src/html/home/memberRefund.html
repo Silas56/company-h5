@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>特色旅游_高端旅游_主题旅游_酷鸟</title>
+    <meta name="Keywords" content="特色旅游,高端旅游,主题旅游,旅游线路,酷鸟"/>
+	<meta name="Description" content="酷鸟旅游网，一个提供特色旅游(旅行)、高端旅游(旅行)、主题旅游(旅行)、旅游线路、旅行线路的旅游网站，特色旅游找酷鸟。" />
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/home/memberUser.css">
+    
+
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current" id="refund_pageCurrent">
+        <!-- 你的html代码 -->
+
+            <!-- 头部 -->
+            <header class="bar bar-nav">
+              <a class="button button-link button-nav pull-left back" href="/demos/tabs">
+                <span class="icon icon-left"></span>
+              </a>
+              <h1 class="title">申请退款</h1>
+            </header>
+            <div class="content refund">
+              <div class="content-block-title refund_reason">
+				        <span>申请退款原因：</span>
+				        <input type="text" class="refundReason" placeholder="请选择退款原因" readonly />
+			        </div>
+      			  <div class="modal modal-in refundReasonList">
+        				<div class="modal-inner border-top-radius"><div class="modal-text">请选择退款原因</div></div>
+        				<div class="modal-inner radioOption" value="1"><div class="modal-text">填写信息错误</div></div>
+        				<div class="modal-inner radioOption" value="2"><div class="modal-text">重复预订</div></div>
+        				<div class="modal-inner radioOption" value="3"><div class="modal-text">不想买了</div></div>
+  				      <div class="modal-inner radioOption border-bottom-radius" value="4">
+                  <div class="modal-text">其他</div>
+                </div>
+			        </div>
+      			  <div class="modal-overlay"></div>
+      			  <div class="content-block-title refundAmount">
+                  <span>申请退款金额：</span>
+                  <input type="tel" id="refund_money_input" placeholder="￥" class="refund_money_inp" />
+              </div>
+      			  
+              <div class="refund_money_red" >（您本次申请退款金额最高<span class="amount">0</span>元）</div>
+      			  <div class="refund_textarea">
+      				  <div class="refund_money_mg">申请退款描述：</div>
+      				  <div class="refund_text">
+      					<textarea name="refund_text" id="TextArea1" class="refund_text_con"  rows="5" maxlength="300" ></textarea>
+      				  </div>
+      				  <div id="get_refund_text_num"><span class="fonts">0</span>/300</div>
+      			  </div>
+              <div class="refund_sub_div">
+                <input type="submit" id="RefundSubmit" class="sub_text" value="提交">
+              </div>
+    
+
+
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.min.js' charset='utf-8'></script>
+	<script src="../../js/common/config.js" type="text/javascript"></script>
+    <script type="text/javascript" src='../../js/home/_memberRefund.min.js'></script>
+		<script type="text/javascript">
+			$.init();
+		</script>
+  </body>
+</html>

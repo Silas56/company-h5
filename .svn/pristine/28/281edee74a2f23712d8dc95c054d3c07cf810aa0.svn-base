@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>酷鸟首页</title>	
+	<!-- sui  style-->
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.1/css/sm.min.css" />
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.1/css/sm-extend.min.css" />
+	<link rel="stylesheet" href="../../css/index/styles.css">
+</head>
+<body>
+     <div class="page-group">
+     <div class="page page-current" id="indexKuniao">
+     	<div class="content">
+     		<div class="headerTop">
+		        <div class="logo">
+		            <img src="../../images/index/kuniao-logo.png"/>
+		            <span>酷鸟</span>
+		        </div>
+
+		        <div class="info">
+		            <div class="user">
+		            	<a href="../search/search.html"><span class="icon icon-search"></span></a>
+		            </div>
+		            <div class="search">
+		            	<a href="#"><span class="icon icon-me"></span></a>		                
+		            </div>  
+		        </div>
+	        </div>
+		    <div class="banner" id="banner" >
+		       	<div class="swiper-container" data-space-between='10'>
+					    <div class="swiper-wrapper">
+					      <!-- for: ${cover} as ${item}, ${index} -->
+					      <div class="swiper-slide">
+					      	<a href="./index?shopCode=1">
+					      		<img src="../../images/index/u133.png" alt="">
+					      		<div class="cover">
+					      			<img src="../../images/index/u133.png" alt="" class="blur">
+					      		</div>
+					      	</a>
+					      </div>
+					      <div class="swiper-slide">
+								<a href="">
+						      		<img src="../../images/index/u133.png" alt="">
+						      		<div class="cover">
+						      			<img src="../../images/index/u133.png" alt="" class="blur">
+						      		</div>
+						      	</a>
+					      </div>
+					      <!-- /for -->
+					    </div>
+					    <!-- <div class="swiper-pagination"></div> -->
+			  	</div>
+			  	<div class="list-top">
+					<div class="l-t-con">
+				  		<a href="./index.html?shopCode=1" class="t1">徒步</a>
+				  		<a href="" class="t2">沙漠探险</a>
+				  		<a href="" class="t3">特斯拉</a>
+				  		<a href="" class="t4">潜水</a>
+				  		<a href="" class="t5">更多</a>
+					</div>
+			  	</div>
+		    </div>          
+		    <div class="k-index-main">
+		    	<div class="themes">
+			    	<h2>精选主题</h2>
+			    	<p>浪漫、唯美、动人</p>
+			    	<ul class="themes-list">
+			    		<li>
+			    			<a href="">
+			    				<img src="../../images/index/themes.jpg" alt="">
+			    				<span>哈尔滨大冒险</span>
+			    			</a>
+			    		</li>
+			    		<li>
+			    			<a href="">
+			    				<img src="../../images/index/themes.jpg" alt="">
+			    				<span>哈尔滨大冒险</span>
+			    			</a>
+			    		</li>
+			    	</ul>
+			    </div>
+			    <div class="product">
+			    	<h2>精选产品</h2>
+			    	<p>浪漫、唯美、动人</p>
+			    	<ul class="pro-list">
+			    		<li>
+			    			<a href="" class="thumbal">
+			    				<img src="../../images/index/pro.jpg" alt="">
+			    				<span>￥100000</span>
+			    			</a>
+			    			<a href="" class="link">
+			    				惠州1日周边旅游深圳出发—【惠州奥地利小镇异域风情 】怡情谷温泉行摄
+			    			</a>
+			    		</li>
+			    		<li>
+			    			<a href="" class="thumbal">
+			    				<img src="../../images/index/pro.jpg" alt="">
+			    				<span>￥100000</span>
+			    			</a>
+			    			<a href="" class="link">
+			    				惠州1日周边旅游深圳出发—【惠州奥地利小镇异域风情 】怡情谷温泉行摄
+			    			</a>
+			    		</li>
+			    	</ul>
+			    </div>
+			    <div class="f-links">
+			    	<h2>鸟窝</h2>
+			    	<p>旅行之家</p>
+			    	<div class="f-links-list">
+			    		<a href="" class="t1">
+			    			<img src="../../images/index/f-t1.png" alt="">
+			    		</a>
+			    		<a href="" class="t2">
+			    			<img src="../../images/index/f-t2.png" alt="">
+			    		</a>
+			    		<a href="" class="t3">
+			    			<img src="../../images/index/f-t3.png" alt="">
+			    		</a>
+			    		<a href="" class="t4">
+			    			<img src="../../images/index/f-t4.png" alt="">
+			    		</a>
+			    		<a href="" class="t5">
+			    			<img src="../../images/index/f-t5.png" alt="">
+			    		</a>
+			    	</div>
+			    </div>
+		    </div>
+            <div class="knfooter">
+          	    <span>Copyright © 酷鸟 (Kooniao) 2015.</span>
+                <span>粤ICP备14050259号-1</span>
+            </div>
+			
+			<script type="text/javascript">
+				var pageConfig = {
+					css : ['css/index/styles.css'],
+					js  : ['js/index/index.min.js']
+				};
+			</script>
+
+     	</div>
+
+    </div>
+    </div>
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.1/js/sm-extend.min.js' charset='utf-8'></script>
+	<script src="../../js/common/config.js" type="text/javascript"></script>
+	<script src="../../js/index/index.min.js" type="text/javascript"></script>
+	<script>
+		$(".info .search").click(function(){
+			localStorage.removeItem('shopCode');
+			window.location.href = '../home/memberUser.html';
+		});
+	</script>
+</body>
+</html>

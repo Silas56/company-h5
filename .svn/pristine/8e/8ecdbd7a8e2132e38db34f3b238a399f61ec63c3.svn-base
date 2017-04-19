@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+	<title>产品详情</title>
+	<meta name="Keywords" content="特色旅游,高端旅游,旅游线路,酷鸟"/>
+	<meta name="Description" content="酷鸟旅游网，一个提供特色旅游特色旅行线路的网站。" />
+	<meta name="ogTitle" property="og:title" content="产品详情 —— 酷鸟"/>
+	<meta name="ogDesc" property="og:description" content="酷鸟旅游网，一个提供特色旅游特色旅行线路的网站。"/>
+	<meta name="ogFlag" property="og:flag" content="特色旅游,高端旅游,旅游线路,酷鸟"/>
+	<!-- sui  style-->
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.1/css/sm.min.css" />
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.1/css/sm-extend.min.css" />
+	<link rel="stylesheet" href="../../css/detail/detail.css" />
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?27b02e364e3727971a2377cdd3f773a3";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<style>
+		body{
+			font-family:Microsoft YaHei;
+		}
+	</style>
+
+</head>
+<body class="detail-container">
+	<div class="page-group">
+    	<div class="page" id="productDetail">
+	    	<div class="content">
+				<div class="loading-spiner">
+	    			<div class="loader">
+			        <div class="loader-inner ball-clip-rotate-pulse">
+			          <div></div>
+			          <div></div>
+			        </div>
+			      </div>
+	    		</div>
+				<div class="productcontent">
+				</div>
+				<div class="comment">
+				</div>
+				<div class="recommend" pi="0">
+				</div>
+			</div>
+			<div class="nav-bar">
+				<div class="pause">店铺暂停营业</div>
+				<div class="nav-con">
+					<a href="#" class="shop">店铺</a>
+					<a href="#" class="call external">咨询</a>
+					<a href="#" class="collect">收藏</a>
+					<a href="#" class="buy-unable">立即预订</a>
+				</div>
+			</div>
+			
+			<div class="productShade"></div>
+			<div class="productShare">
+			  <div class="share_top">
+				<!--
+				<div class="share_con wechatFriend"><img src="../../images/home/share1.png"><p>微信好友</p></div>
+				<div class="share_con wechatFriends"><img src="../../images/home/share2.png"><p>朋友圈</p></div>
+				-->
+				<div class="share_con weibo">
+					<a href="" rel = "noreferrer" external>
+						<img src="../../images/home/share3.png"><p>新浪微博</p>
+					</a>
+				</div>
+				<div class="share_con QQFriends">
+					<a href="" rel = "noreferrer" external>
+						<img src="../../images/home/share4.png"><p>QQ好友</p>
+					</a>
+				</div>
+				<div class="share_con Qzone">
+					<a href="" rel = "noreferrer" external>
+						<img src="../../images/home/share5.png"><p>QQ空间</p>
+					</a>
+				</div>
+				<!--
+				<div class="share_con"><img src="../../images/home/share6.png"><p>更多</p></div>
+				-->
+			  </div>
+			  <div class="share_bottom">取消</div>
+			</div>
+			
+    	</div>
+		<div class="page" id="productNotFound">
+			<div class="content">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left back"></a>
+					<h1 class="title" style="font-weight:bold">该产品已售罄</h1>
+				</header>
+				<div class="con">
+					<div class="tips" style="top:35%">
+						<a href="#" class="errorImg"><img src="../../images/detail/kongBox.jpg" style="width: 60%;margin-bottom: 5%;"></a>
+						<!--<a href="#" class="knIndex">返回首页</a>-->
+						<p class="tipsComent" style="margin-bottom: 10px;color:#000"></p>
+						<button href="#" style="border: none;background-color: #fff;border: 2px solid #0cb9f3;width: 35%;height: 38px;border-radius: 6px;color:#0cb9f3;font-weight: 400;margin-right: 8%" class="knindex">酷鸟首页</button>
+						<button href="#" style="border: none;background-color: #fff;border: 2px solid #0cb9f3;width: 35%;height: 38px;border-radius: 6px;color:#0cb9f3;font-weight: 400" class="shopIndex">店铺首页</button>
+					</div>
+					<div class="recommend-pro" style="margin-top:328px;border:none">
+						<h2 style="margin-bottom: 18px;"><span>精品推荐</span></h2>
+						<ul class="item-list">
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	<!-- sui script -->
+	<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.1/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+	<script src="../../js/common/jweixin-1.0.0.js" type="text/javascript"></script>
+	<script src="../../js/common/config.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../js/detail/detail.min.js"></script>
+	<script type="text/javascript">
+        $.init();
+    </script>
+	<script>
+		var _hmt = _hmt || [];
+		(function()
+		{ var hm = document.createElement("script"); hm.src = "//hm.baidu.com/hm.js?4c719ebcb9e3f3cb53d44edbb66ad609"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); }
+		)();
+	</script>
+</body>
+</html>

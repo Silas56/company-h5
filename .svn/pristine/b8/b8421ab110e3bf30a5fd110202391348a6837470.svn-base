@@ -1,0 +1,33 @@
+<!-- for: ${products} as ${product} -->
+<div class="chanpin">
+	<input type="hidden" class="shopCode" value="${product.shop_code_}" />
+	<input type="hidden" class="productCode" value="${product.code_}" />
+    <div class="chanpin_list_l">
+        <!-- if: ${product.symbol_image_} -->
+            <img src="${product.symbol_image_}">
+        <!-- else -->
+            <img src="../../images/home/shop_default.jpg" />
+        <!-- /if -->
+    </div>
+    <div class="chanpin_list_r">
+        <div class="chanpin_name">${product.name_}</div>
+        <div class="chanpin_p_s">
+            <div class="chanpin_price">￥${product.price_}</div>
+
+             <!-- if: ${product.scores_} -->
+            <div class="chanpin_star">
+              
+                 <ul>
+                    <!-- for: ${product.scoreList} as ${scoreItem} -->
+                    <li><span style="width:${scoreItem};"></span></li>
+                    <!-- /for -->
+                </ul>
+                <span class="score">${product.scores_}分</span>
+            </div> 
+             <!-- /if -->
+
+        </div>
+
+    </div>
+</div>
+<!-- /for -->

@@ -1,0 +1,27 @@
+
+  <!-- for: ${shopInfoList} as ${shopInfo} -->
+  <div class="content-block">
+  <input type="hidden" value="${shopInfo.shopCode}" class="shopCode" />
+    <div class="product_list">
+      <div class="product_list_l">
+        <!-- if: ${shopInfo.imgSrc} -->
+            <img src="${shopInfo.imgSrc}">
+        <!-- else -->
+            <img src="../../images/home/shop_default.jpg" onerror="this.src='../../images/home/shop_default.jpg'" />
+        <!-- /if -->
+      </div>
+      <div class="product_list_r">
+        <div class="product_list_r_title">${shopInfo.name}</div>
+        <!-- <div class="product_list_r_star">
+          <span class="score"><em style="width:${shopInfo.score|scoreFormat}% ;"></em></span>
+          ${shopInfo.score}分
+        </div> -->
+        <div class="product_list_r_menu" id="shop_menu">
+          <div class="menu_circular left"></div>
+          <div class="menu_circular mid" ></div>
+          <div class="menu_circular right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /for -->

@@ -1,0 +1,25 @@
+<!-- for: ${orderDetails.productList} as ${item},${index} -->
+<div class="content_mid" data-shopcode="${orderDetails.shopInfo.shopCode}" data-productCode="${item.productSpu}">
+    <div class="mid_left">
+        <div class="mid_img"> <img src="${item.cover}"> </div>
+    </div>
+    <div class="mid_right">
+        <div class="mid_title clearfix">
+            <div class="title_span">${item.productName}</div>
+        </div>
+        <div class="mid_specifications clearfix">
+            <div class="s_right">
+                <p class="s_right_p">商品规格：</p>${item.spec} </div>
+                
+             <!-- if:${orderDetails.userOrderBean.useDate} -->
+            <div class="s_right">
+                <p class="s_right_p">使用日期：</p>${orderDetails.userOrderBean.useDate|dateFormat}
+            </div>
+            <!-- /if -->
+        </div>
+    </div>
+    <div class="mid_right_right">
+        ￥ ${item.price}</br>X${item.num}
+    </div>
+</div>
+<!-- /for -->

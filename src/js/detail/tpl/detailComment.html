@@ -1,0 +1,30 @@
+<h5>
+	<!-- if: ${total}!='0' -->
+	<a href="comment.html?shopCode=${shopCode}&productCode=${productCode}">
+	<!-- /if -->
+		<span>评价</span>
+		(共<em>${total}</em>条评价)
+	</a>
+</h5>
+<div class="cm-list">
+	<ul>
+
+		<!-- for: ${coments} as ${coment} -->
+		<li>
+			<div class="cm-info">
+				<a href="" class="name">${coment.userName}</a>
+			<!-- 	<span class="score"><em style="width:${coment.grade|scoreFormat}%;"></em></span> -->
+				<time>${coment.commentTime}</time>
+			</div>
+			<div class="cm-con">
+				${coment.content|raw}
+			</div>
+		</li>
+		<!-- /for -->
+		<!-- if: ${total}=='0' -->
+			<div class="noComment">暂无评价</div>
+
+		<!-- /if -->
+
+	</ul>
+</div>

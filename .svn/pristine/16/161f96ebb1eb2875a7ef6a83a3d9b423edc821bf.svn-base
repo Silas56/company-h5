@@ -1,0 +1,31 @@
+<!-- for: ${shops} as ${shop} -->
+<div class="content-block">
+    <div class="product_list">
+        <input type="hidden" class="shopCode" value="${shop.code_}" />
+        <div class="product_list_l">
+            <!-- if: ${shop.symbol_image_} -->
+            <img src="${shop.symbol_image_}">
+            <!-- else -->
+            <img src="../../images/home/shop_default.jpg" />
+            <!-- /if -->
+        </div>
+        <div class="product_list_r">
+            <div class="product_list_r_title">${shop.name_}</div>
+            <!-- if: ${shop.scores_} -->
+            <div class="product_list_r_star">
+                <ul>
+                    <!-- for: ${shop.scoreList} as ${scoreItem} -->
+                    <li><span style="width:${scoreItem};"></span></li>
+                    <!-- /for -->
+                </ul>
+                <span class="score">${shop.scores_}分</span>
+          
+            </div>
+            <!-- /if -->
+        </div>
+        <div class="product_list_r2">
+            <span class="icon icon-right"></span>
+        </div>
+    </div>
+</div>
+<!-- /for -->

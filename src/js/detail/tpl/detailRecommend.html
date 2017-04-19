@@ -1,0 +1,18 @@
+<!-- if: ${recommends.length}>0 -->
+<h5>推荐产品</h5>
+<div class="re-con">
+	<ul>
+		<!-- for: ${recommends} as ${item}, ${index} -->
+		<li data-shopcode="${item.shopCode}" data-proCode="${item.code}">
+			<a href="">
+				<img src="${item.cover}" alt="" />
+			</a>
+			<h6>
+				<a href="#">${item.title}</a>
+			</h6>
+			<p><span>￥${item.minFinalPrice}</span></p>
+		</li>
+		<!-- /for -->
+	</ul>
+</div>
+<!-- /if -->

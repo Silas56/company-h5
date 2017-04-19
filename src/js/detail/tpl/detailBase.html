@@ -1,0 +1,111 @@
+<!-- Slider -->
+<div class="swiper-container" data-space-between='10'>
+	<div class="swiper-wrapper">
+		<!-- if: ${gallerys}!=='undefind' -->
+		<!-- for: ${gallerys} as ${item}, ${index} -->
+		<div class="swiper-slide"><img src="${item}" alt="" onerror="this.src='../../images/detail/default-cover.jpg'"></div>
+		<!-- /for -->
+		<!-- else -->
+		<div class="swiper-slide"><img src="../../images/detail/default-cover.jpg" alt=""></div>
+		<!-- /if -->
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+<div class="info">
+	<h1><a href="">${product.title}</a></h1>
+	<div class="price-wrapper">
+		<div class="priceWrapper">
+			<p class="price">
+				<span>￥</span>
+				<!-- if: ${product.minFinalPrice}===${product.maxFinalPrice} -->
+				${product.minFinalPrice}
+				<!-- else -->
+				${product.minFinalPrice}-${product.maxFinalPrice}
+				<!-- /if -->
+			</p>
+			<!-- if: ${product.marketPrice}!=0 -->
+			<del>市场价：￥${product.marketPrice}</del>
+			<!-- /if -->
+		</div>
+		
+		<span class="share ic-share">分享</span>
+	</div>
+</div>
+<div class="list-function">
+	<!-- if: ${product.saleStatus}==1 && ${product.shopStatus} == 1 && ${product.minFinalPrice}!=0 && ${product.maxFinalPrice}!=0 -->
+		<!-- if: ${product.productType}=='plan' || ${product.productType}=='hotel' || ${product.productType}=='bundle' -->
+		<a class="pro">选择商品规格、套餐类型、使用日期</a>
+		<!-- else -->
+		<a class="pro">选择商品规格、套餐类型</a>
+		<!-- /if -->
+	<!-- /if -->
+	
+	<!-- for: ${elements} as ${element} -->
+	<!-- if: ${element.type}==='viewspot' -->
+	<a href="viewspot.html?nodeCode=${element.code}" class="hotel">景点介绍</a>
+	<!-- /if -->
+	<!-- if: ${element.type}==='hotel' -->
+	<a href="hotel.html?nodeCode=${element.code}" class="hotel">酒店介绍</a>
+	<!-- /if -->
+	<!-- if: ${element.type}==='plan' -->
+	<a href="travel.html?planCode=${element.code}&productCode=${product.code}&shopCode=${product.shopCode}" class="hotel">行程介绍</a>
+	<!-- /if -->
+	<!-- if: ${element.type}==='lifestyle' -->
+	<a href="lifestyle.html?nodeCode=${element.code}" class="hotel">吃喝玩乐</a>
+	<!-- /if -->
+	<!-- if: ${element.type}==='bundle' -->
+	<div class="product">
+		<h6>组合产品</h6>
+		<!-- for: ${bundles} as ${bundle}, ${index} -->
+		<div pcode="${bundle.code}" scode="${bundle.shopCode}">
+			<div class="bundleDiv">
+				<img src="${bundle.cover}" />
+			</div>
+			<div class="bundleWord">
+				${bundle.title}
+			</div>
+		</div>
+		<!-- /for -->
+	</div>
+	<!-- /if -->
+	<!-- /for -->
+	
+	<!-- if: ${product.bookingNotes} -->
+	<a href="bookNotice.html?productCode=${product.code}&shopCode=${product.shopCode}" class="reserve">预订须知</a>	
+	<!-- /if -->
+	
+	<!-- if: ${product.notice} -->
+	<a href="others.html?productCode=${product.code}&shopCode=${product.shopCode}" class="others">其它事项</a>
+	<!-- /if -->
+	
+	<!-- if: ${product.costNotes} -->
+	<div class="cost-desc">	<h6>费用说明</h6>
+		${product.costNotes|raw}
+	</div>
+	<!-- /if -->
+	
+	<div class="product">
+		<h6>产品特色</h6>
+		<ul class="p-list">		
+			<!-- if: ${product.startFrom} -->
+			<li class="place ic-place">出发地：${product.startFrom}</li>
+			<!-- /if -->
+			
+			<!-- if: ${product.destination} -->
+			<li class="destination ic-destination">目的地：${product.destination}</li>
+			<!-- /if -->
+			
+			<!-- if: ${product.openHours} -->
+			<li class="time ic-time">营业时间：${product.openHours}</li>
+			<!-- /if -->
+			
+			<!-- if: ${product.address} -->
+			<li class="address ic-address">地址：${product.address}</li>
+			<!-- /if -->
+			
+			<!-- if: ${product.content} -->
+			<li class="pro-desc no-reset-style">${product.content|raw}</li>
+			<!-- /if -->
+		</ul>
+	</div>
+</div>

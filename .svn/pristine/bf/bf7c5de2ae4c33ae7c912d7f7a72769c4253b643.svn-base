@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>特色旅游_高端旅游_主题旅游_酷鸟</title>
+    <meta name="Keywords" content="特色旅游,高端旅游,主题旅游,旅游线路,酷鸟"/>
+	<meta name="Description" content="酷鸟旅游网，一个提供特色旅游(旅行)、高端旅游(旅行)、主题旅游(旅行)、旅游线路、旅行线路的旅游网站，特色旅游找酷鸟。" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Google Web Fonts -->
+
+    <link rel="stylesheet" href="http://m.sui.taobao.org/dist/css/sm.css">
+    <link rel="stylesheet" href="http://m.sui.taobao.org/dist/css/sm-extend.css">
+	<link rel="stylesheet" href="../../css/home/style.css">
+    <link rel="apple-touch-icon-precomposed" href="http://m.sui.taobao.org/assets/img/apple-touch-icon-114x114.png">
+  </head>
+  <body>
+    <div class="page-group">
+		<div id="accountsetting" class="page page-current">
+			<header class="bar bar-nav">
+				<a class="button button-link button-nav pull-left back external" href="memberUser.html" style="color:#333333">
+					<span class="icon icon-left"></span>
+				</a>
+				<h1 class="title">账户设置</h1>
+			</header>
+				<div class="content content-padded ">
+					<ul class="account-setting">
+						<li class="li">
+							<div class="line-height">
+								<div class="item nickname">
+									<div class="nav">
+										昵称
+									</div>
+									<div class="nav1">
+										<a href="changename.html" >未设置</a>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</li>
+						<li class="li">
+							<div class="line-height" id="head-pic">
+								<div class="item pic">
+									<iframe name="ajaxUpload" style="display:none"></iframe>
+									<form method="POST" class="form" enctype="multipart/form-data" target="ajaxUpload" >
+										<input type="file" name="file" class="headUpload" accept="image/*" />
+										<input type="hidden" name="module" value="user" />
+									</form>
+									<div class="nav div-left">
+										头像
+									</div>
+									<div class="nav1">
+										<img class="img-right" src="../../images/home/photo_default.jpg" />										
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</li>
+						<li class="li">
+							<div class="line-height sexdiv">
+								<div class="item">
+									<div class="nav">
+										性别
+									</div>
+									<!--
+									<div class="nav2">
+										<select class="sex">
+											<option value="0">未设置</option>
+											<option value="1">男</option>
+											<option value="2">女</option>
+											<option value="3">保密</option>
+										</select>
+									</div>
+									-->
+									<div class="nav2">
+										<span class="sex">未设置</span>
+									</div>
+									<!-- <div class="modal modal-in optionList">
+										<div class="modal-inner radioOption" value="1">
+											<div class="modal-text">男</div>
+										</div>
+										<div class="modal-inner radioOption" value="2">
+											<div class="modal-text">女</div>
+										</div>
+										<div class="modal-inner radioOption" value="3">
+										<div class="modal-text">保密</div></div>
+									</div> -->
+								  <div class="modal-overlay"></div>
+									
+									<div class="clear"></div>
+								</div>
+							</div>
+						</li>
+						<li class="li">
+							<div class="line-height birthDiv">
+								<div class="item">
+									<div class="nav">
+										出生日期
+									</div>
+									<div class="nav2">
+										<input type="text" readonly class="birth" value="未设置"/>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</li>
+						<li class="acount-safe-li">
+							<span>账户安全</span>
+						</li>
+						<li class="exit-acount-li">
+							退出当前账户
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<script src="http://m.sui.taobao.org/assets/js/zepto.js"></script>
+    <script src="http://m.sui.taobao.org/dist/js/sm.js"></script>
+    <script src="http://m.sui.taobao.org/dist/js/sm-extend.js"></script>
+    <script src="http://m.sui.taobao.org/dist/js/sm-city-picker.js"></script>
+    <script src="../../js/common/config.js"></script>
+	<script src="../../js/home/accountSetting.min.js"></script>
+	<script type="text/javascript">
+		$.init();
+	</script>
+  </body>
+</html>

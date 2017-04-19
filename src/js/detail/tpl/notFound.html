@@ -1,0 +1,9 @@
+<!-- for: ${data} as ${item},${index} -->
+<div class="item" data-pcode="${item.code}" data-scode="${item.shopCode}">
+	<a href="../detail/detail.html?productCode=${item.code}&shopCode=${item.shopCode}">
+	  <img src="${item.cover}" alt="${item.name}" />
+	</a>
+	<h4><a href="../detail/detail.html?productCode=${item.code}&shopCode=${item.shopCode}">${item.name}</a></h4>
+	<p><span>￥${item.minPrice}</span></p>
+</div>
+<!-- /for -->

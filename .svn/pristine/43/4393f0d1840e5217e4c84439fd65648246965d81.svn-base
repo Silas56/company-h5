@@ -1,0 +1,39 @@
+@import '../../css/common/reset.scss';
+
+$baseImageDir : '../../images/';
+
+#about_404{
+	background: #fff;
+	.bar-nav{
+		background: #fff;
+	}
+}
+
+.con-404{
+	/*margin-top: 50px;*/
+	background: url(#{$baseImageDir}/common/404.png) no-repeat center top;
+	background-size: 60% auto;
+	padding-top: 88px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translateY(-50%);
+	p{
+		font-size: 16px;
+		text-align: center;
+		color: #949494;
+	}
+	.back-to-index{
+		height: 44px;
+		line-height: 44px;
+		display: inline-block;
+		padding: 0 20px;
+		font-size: 18px;
+		border:1px solid #949494;
+		border-radius: 10px;
+		color: #949494;
+		margin-top: 15px;
+	}
+}

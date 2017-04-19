@@ -1,0 +1,122 @@
+
+	  	
+	  	<div class="info">
+	  		<h1><a href="">酷鸟微推 荐泰国清迈和拜县的美丽《烘焙一块清新，冲调一杯人文》</a></h1>    
+	  		<div class="price-wrapper">
+	  			<p class="price">
+	  				<span>￥</span>651000-888800
+	  			</p>
+	  			<del>市场价：￥130000</del>
+	  			<span class="share ic-share">分享</span>
+	  		</div>
+	  	</div>
+	  	<div class="list-function">
+	  		<a href="" class="pro">选择商品规格、套餐类型、使用日期</a>
+	  		<a href="./hotel.html" class="hotel">酒店介绍</a>
+			<div class="product">
+				<h6>组合产品</h6>
+				<div>
+					<div style="width:33%;float:left"><img src="sdf" style="width:33%" /></div>
+					<div style="width:66%;overflow:hidden;font-size: 0.8rem;word-wrap: break-word;">asdfadfasdfasdfasdfasdfasdfadfadf</div>
+				</div>
+				<div>
+					<div style="width:33%;float:left"><img src="sdf" style="width:33%" /></div>
+					<div style="width:66%;overflow:hidden;font-size: 0.8rem;word-wrap: break-word;">asdfadfasdfasdfasdfasdfasdfadfadf</div>
+				</div>
+				<div>
+					<div style="width:33%;float:left"><img src="sdf" style="width:33%" /></div>
+					<div style="width:66%;overflow:hidden;font-size: 0.8rem;word-wrap: break-word;">asdfadfasdfasdfasdfasdfasdfadfadf</div>
+				</div>
+			</div>
+	  		<a href="" class="reserve">预订须知</a>
+	  		<a href="" class="others">其它事项</a>
+	  		<div class="cost-desc">
+	  			<h6>费用说明</h6>
+	  			<p>费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容。费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容费用说明内容</p>
+	  		</div>
+	  		<div class="product">
+	  			<h6>产品特色</h6>
+	  			<ul class="p-list">
+	  				<li class="place ic-place">出发地：城市名称 / 城市名称 / 深圳 / 上海 深圳 / 上海</li>
+	  				<li class="destination ic-destination">目的地：城市名称 / 城市名称 / 广州</li>
+	  				<li class="time ic-time">营业时间：周一至周五9:00-18:00 周末休息</li>
+	  				<li class="address ic-address">地址：广东省广州市番禺区88号</li>
+	  				<li class="pro-desc">产品介绍文字Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</li>
+	  			</ul>
+	  		</div>
+	  	</div>
+	  	<!-- <div class="comment">
+	  		<h5>
+	  			<a href="">
+	  				<span>评价</span>
+	  				(共<em>3</em>条评价)
+	  			</a>
+	  		</h5>
+	  		<div class="cm-list">
+	  			<ul>
+	  				<li>
+	  					<div class="cm-info">
+	  						<a href="" class="name">Syle</a>
+	  						<span class="score"><em style="width:80%;"></em></span>
+	  						<time>2015-04-21</time>
+	  					</div>
+	  					<div class="cm-con">
+	  						小米4已经体验完毕，屏幕很鲜艳，手感很不错，算是目前最好的小米手机了。
+	  					</div>
+	  				</li>
+	  			</ul>
+	  		</div>
+	  	</div> -->
+	  	<div class="recommend">
+	  		<h5>推荐产品</h5>
+	  		<div class="re-con">
+	  			<ul>
+	  				<li>
+	  					<a href="">
+	  						<img src="images/temp-r.jpg" alt="">
+	  					</a>
+	  					<h6>
+	  						<a href="">酷鸟微推 荐泰国清迈和拜县的美丽《烘焙一块清新，冲调一杯人文》</a>
+	  					</h6>
+	  					<p><span>￥19999</span></p>
+	  				</li>
+	  				<li>
+	  					<a href="">
+	  						<img src="images/temp-r.jpg" alt="">
+	  					</a>
+	  					<h6>
+	  						<a href="">酷鸟微推 荐泰国清迈和拜县的美丽《烘焙一块清新，冲调一杯人文》</a>
+	  					</h6>
+	  					<p><span>￥19999</span></p>
+	  				</li>
+	  				<li>
+	  					<a href="">
+	  						<img src="images/temp-r.jpg" alt="">
+	  					</a>
+	  					<h6>
+	  						<a href="">酷鸟微推 荐泰国清迈和拜县的美丽《烘焙一块清新，冲调一杯人文》</a>
+	  					</h6>
+	  					<p><span>￥19999</span></p>
+	  				</li>
+	  				<li>
+	  					<a href="">
+	  						<img src="images/temp-r.jpg" alt="">
+	  					</a>
+	  					<h6>
+	  						<a href="">酷鸟微推 荐泰国清迈和拜县的美丽《烘焙一块清新，冲调一杯人文》</a>
+	  					</h6>
+	  					<p><span>￥19999</span></p>
+	  				</li>
+	  			</ul>
+	  		</div>
+	  	</div>
+		
+	  	<div class="nav-bar">
+	  		<div class="nav-con">
+	  			<a href="" class="shop">店铺</a>
+		  		<a href="" class="call">咨询</a>
+		  		<a href="" class="collect">收藏</a>
+		  		<a href="" class="buy-now">立即预订</a>
+	  		</div>
+	  	</div>
+	  	

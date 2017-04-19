@@ -1,0 +1,61 @@
+<!-- for: ${days} as ${day} -->
+<div id="D${day.day}">
+	<header>
+		<h2>D${day.day}</h2>
+		<h3>${day.title}</h3>
+		<p>${day.summary}</p>
+	</header>
+	<!-- var: nodes=${day.nodes} -->
+	<!-- for: ${nodes} as ${node} -->
+	<div class="item-bd">
+		<!-- if:  ${node.type}==='hotel' -->
+		<a href="hotel.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='viewspot' -->
+		<a href="viewspot.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='lifestyle' -->
+		<a href="lifestyle.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='custom_hotel' -->
+		<a href="customHotel.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='custom_viewspot' -->
+		<a href="customViewspot.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='custom_lifestyle' -->
+		<a href="customLifeStyle.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='custom_event' -->
+		<a href="customEvent.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- elif: ${node.type}==='custom_traffic' -->
+		<a href="customTraffic.html?nodeCode=${node.id}&planCode=${planCode}">
+		<!-- else -->
+		<a href="#">
+		<!-- /if -->
+			<h4>${node.title}</h4>
+		</a>
+		<p class="desc">${node.overview|raw}</p>
+		<div class="img-list">
+			<!-- var: gallerys=${node.gallery} -->
+			<!-- for: ${gallerys} as ${gallery} -->
+			<img src="${gallery}" alt="">
+			<!-- /for -->
+		</div>
+	</div>
+	<!-- /for -->
+</div>
+<!-- /for -->
+<!-- if: ${days.length}>0 -->
+<div class="slide-bar">
+	<a href="javascript:void(0);" class="prev disabled" external><span class="icon icon-up"></span></a>
+	<div class="bar-con">
+		<!-- for: ${days} as ${day},${index} -->
+		<a id="nav${day.day}" href="#D${day.day}" 
+		<!-- if:  ${index}<3 -->
+		<!-- if: ${index}===0 -->
+		class="cur"
+		<!-- /if -->
+		<!-- else -->
+		class="hide"
+		<!-- /if -->
+		external>D${day.day}</a>
+		<!-- /for -->
+	</div>
+	<a href="javascript:void(0);" class="next" external><span class="icon icon-down"></span></a>
+</div>
+<!-- /if -->

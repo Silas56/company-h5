@@ -1,0 +1,32 @@
+
+<!-- for: ${data} as ${item}, ${index} -->
+<div class="item">
+	<p class="base-info">
+		<span class="name">${item.name}</span>
+		<span class="mobile">${item.mobile}</span>
+	</p>
+	<!-- if: ${item.email} -->
+	<p class="email">
+		${item.email}
+	</p>
+	<!-- /if -->
+
+	<!-- if:${item.certType}>0 -->
+	<p class="cert">
+		<span>${item.certType|certTypeFormart}</span>
+		<span>${item.certNumber}</span>
+	</p>
+	<!-- /if -->
+
+	<div class="action">
+		<!-- if: ${item.isDefault} === 1 -->
+		<span class="set-default default" data-code="${item.code}">默认</span>
+		<!-- else -->
+		<span class="set-default" data-code="${item.code}">默认</span>
+		<!-- /if -->
+		<span class="del" data-code="${item.code}">删除</span>
+		<span class="edit" data-code="${item.code}" data-name="${item.name}" data-mobile="${item.mobile}" data-email="${item.email}" data-certtype="${item.certType}" data-certnumber="${item.certNumber}" data-certtext="${item.certType|certTypeFormart}">编辑</span>
+	</div>
+</div>
+
+<!-- /for -->

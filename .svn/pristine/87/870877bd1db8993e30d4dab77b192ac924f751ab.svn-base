@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="MSUI: Build mobile apps with simple HTML, CSS, and JS components."> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>联系商家</title>
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm.min.css">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm-extend.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body >
+<div class="page-group" >
+<div class="page page-current" >
+
+     <header class="bar bar-nav">
+             <a class="button button-link button-nav pull-left back">
+                <span class="icon icon-left"></span>
+             </a>
+             <h1 class='title'>联系商家</h1>
+     </header>
+     
+     <div class="content">
+          <img class="img" src="images/u122.png"/>
+          <span class="dianpu_name">广州顶峰户外运动俱乐部</span>
+          <div style="width:150px;height:50px;margin:0 auto -20px auto;">
+               <span class="score"><em style="width:80%;"></em></span>
+               <span class="fenshu">4.0分</span>
+          </div>
+          
+          <div class="phone">
+          	   <img src="images/u35.png" alt="联系电话"/>
+          	   <div class="number">联&nbsp;系&nbsp;电&nbsp;话：13888888888</div>
+          </div>
+          <div class="address">
+          	   <img src="images/u33.png" alt="实体店地址："/>
+          	   <div class="dizhi">实体店地址：广东省广州市番禺区大学城北</div>
+          </div>
+          <div class="introduce">
+          	   店铺介绍内容：店铺介绍内容店铺介绍内容店铺介绍内容店铺介绍内容店铺介绍内容店铺介绍内容店铺介绍内容
+          </div>  
+     </div>
+     <div class="shoucang" id="success">收藏成功</div>
+     <div class="shoucang" id="cancel">取消收藏</div>
+     <a href="#" style="cursor:hand">
+        <div class="collection" id="collection" onclick="knshoucang()">
+            收&nbsp;藏
+        </div>
+     </a>
+     <a href="#" style="cursor:hand">
+        <div class="collection_after" id="collection_after" onclick="knyishoucang()">
+            已&nbsp;收&nbsp;藏
+        </div>
+     </a>
+
+</div>
+</div>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="js/script.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- if: ${snap.productImgUrl} -->
+<div class="cover">
+	<img src="${snap.productImgUrl}">
+</div>
+<!-- else -->
+<div class="cover">
+	<img src="../../images/detail/default-cover.jpg">
+</div>
+<!-- /if -->
+
+<div class="info">
+	<h1>${snap.productName}</h1>
+	<div class="base">
+		<p>商品规格：${snap.spec}</p>
+		<p>使用日期：${snap.departureDate}</p>
+		<p>价格：￥${snap.price}</p>
+		<p>数量：${snap.num}</p>
+		<p>总金额：￥${snap.totalPrice}</p>
+	</div>
+</div>
+<div class="list-function">
+	<!-- if: ${snap.snapPlanId}!== 0 -->
+	<a href="#" class="planIntro">行程介绍</a>
+	<!-- /if -->
+
+	<!-- if: ${snap.bookingNotes} -->
+	<div class="bookNotice">
+		<h6>预订须知</h6>
+		<p>${snap.bookingNotes|raw}</p>
+	</div>
+	<!-- /if -->
+
+	<!-- if: ${snap.otherNotes} -->
+	<div class="others">
+		<h6>其它事项</h6>
+		<p>${snap.otherNotes|raw}</p>
+	</div>
+	<!-- /if -->
+
+	<!-- if: ${snap.feeNotes} -->
+	<div class="cost-desc">	
+		<h6>费用说明</h6>
+		<p>${snap.feeNotes|raw}</p>
+	</div>
+	<!-- /if -->
+	
+	<!-- if: ${snap.detailContent} -->
+	<div class="product">
+		<h6>产品特色</h6>
+		<p>${snap.detailContent|raw}</p>
+	</div>
+	<!-- /if -->
+</div>

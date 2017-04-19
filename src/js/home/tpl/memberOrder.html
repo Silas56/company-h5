@@ -1,0 +1,161 @@
+
+<!-- for:${MemberOrder} as ${item}-->
+<!-- if: ${item.orderStatus} === 1 -->
+<div class="order_mg">                  
+  <div class="order_mg_text">商家将在
+  	<input type="hidden" value="${currTime}" class="currTime">
+	<input type="hidden" value="${item.orderTime}" class="orderTime" />
+	<span class="time-item">
+	</span>内处理该订单，请耐心等待
+  </div>      
+</div>
+<!-- /if -->
+<!-- if: ${item.orderStatus} === 2 -->
+<div class="order_mg">                  
+  <div class="order_mg_text">请在
+  	<input type="hidden" value="${currTime}" class="currTime">
+	<input type="hidden" value="${item.lastUpdateTime}" class="orderTime" />
+	<span class="time-item">
+	</span>内支付。超时未支付将取消该订单！
+  </div>      
+</div>
+<!-- /if -->
+
+<div class="order_list">
+  <div class="order_content">
+	<div class="content_heading">
+
+	  <div class="heading_right">
+
+		<!-- if:${item.orderStatus} == 1 -->
+        <span>待支付 待确认</span>
+        <!-- /if -->      
+
+		<!-- if:${item.orderStatus}== 2 -->
+		<span>待支付 已确认</span>
+		<!-- /if -->
+		
+		<!-- if:${item.orderStatus}== 3 -->
+		<span>已取消</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 4 -->
+		<span>已支付 已确认</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 5 -->
+		<span>交易关闭 等待退款</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 6 -->
+		<span>交易关闭 仲裁退款中</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 7 -->
+		<span>交易关闭 退款成功</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 8 -->
+		<span>交易成功</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 9 -->
+		<span>交易关闭 仲裁退款成功</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 10 -->
+		<span>交易关闭 仲裁退款拒绝</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 11 -->
+		<span>交易成功 退款成功</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 12 -->
+		<span>交易成功 仲裁退款中</span>
+		<!-- /if -->
+
+		<!-- if:${item.orderStatus}== 13 -->
+		<span>交易成功 仲裁退款拒绝</span>
+		<!-- /if -->
+
+	  </div>
+
+	  <div class="heading_left">
+		<span class="head_num">订单编号:</span>
+		<span class="head_true">${item.orderCode}</span>
+	  </div>
+	  
+	</div>
+	<div class="content_mid">
+	  <div class="mid_left">
+		<div class="mid_img">
+		  <img src="${item.productImgUrl}">
+		</div>
+	  </div>
+
+	  <div class="mid_right">
+		<div class="mid_title">
+		  <div class="title_span">${item.productName}</div>
+		</div>
+		<div class="mid_specifications">
+		  <div class="s_left">
+			<div class="s_left_money">￥${item.price}</div>
+			<div class="s_left_num">×${item.num}</div>
+		  </div>
+		  <div class="s_right">
+			商品规格：${item.spec}
+		  </div>
+		  <!-- if:${item.useDate} -->
+		  <div class="s_right">
+			使用日期：${item.useDate|scoreFormat}
+		  </div>
+		  <!-- /if -->
+
+		</div>
+	  </div>
+	</div>
+	<div class="content_footing">
+	  <input type="hidden" value="${item.orderCode}" class="orderCode" />
+	  <input type="hidden" value="${item.arbitrationCode}" class="arbitrationCode" />
+	  <input type="hidden" value="${item.paymentCode}" class="paymentCode" />
+	  <input type="hidden" value="${item.orderStatus}" class="orderStatus" />
+	  <input type="hidden" value="${item.productType}" class="productType" />
+	  
+	  <div class="foot_tex">
+		总 金 额： ￥${item.orderCountPrice}
+	  </div>
+	   <!-- if: ${item.isComment}=='2' -->
+	  <div class="r_btn button button-dark evaluate">评价</div>
+	  <!-- /if -->
+	  <!-- if: ${item.orderStatus}=='1' -->
+	  <div class="r_btn button button-dark cancelOrder">取消订单</div>
+
+	  <!-- elif: ${item.orderStatus}=='2' -->
+	  
+	  <div class="r_btn button button-fill button-danger pay">立即支付</div>
+	  <div class="r_btn button button-dark cancelOrder">取消订单</div>
+
+	  <!-- elif: ${item.orderStatus}=='4' -->
+	  <div class="r_btn button button-dark applyRefund">申请退款</div>
+	  <div class="r_btn button button-dark resendResume">重发消费码</div>
+
+	  <!-- elif: ${item.orderStatus}=='5' -->
+	  <div class="r_btn button button-dark cancelRefund">取消申请</div>
+
+	  <!-- elif: ${item.orderStatus}=='8' -->
+	  <div class="r_btn button button-dark applyArbitration">申请仲裁退款</div>
+	
+	  <!-- elif: ${item.orderStatus}=='12'-->
+	  <!-- <div class="r_btn button button-dark evaluate">评价</div> -->
+	  <div class="r_btn button button-dark cancelArbitration">取消仲裁</div>
+
+	  <!-- elif: ${item.orderStatus}=='13' || ${item.orderStatus}=='11' -->
+	  <!-- <div class="r_btn button button-dark evaluate">评价</div> -->
+
+	  <!-- /if -->
+	</div>
+  </div>
+</div>
+
+<!-- /for -->   

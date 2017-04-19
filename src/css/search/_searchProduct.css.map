@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAU,CACT,MAAM,CAAC,UAAU,CACjB,gBAAgB,CAAC,KAAK,CACtB,OAAO,CAAC,MAAM",
+"sources": ["_searchProduct.scss"],
+"names": [],
+"file": "_searchProduct.css"
+}

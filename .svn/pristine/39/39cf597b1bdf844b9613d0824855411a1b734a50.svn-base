@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>特色旅游_高端旅游_主题旅游_酷鸟</title>
+    <meta name="Keywords" content="特色旅游,高端旅游,主题旅游,旅游线路,酷鸟"/>
+	<meta name="Description" content="酷鸟旅游网，一个提供特色旅游(旅行)、高端旅游(旅行)、主题旅游(旅行)、旅游线路、旅行线路的旅游网站，特色旅游找酷鸟。" />
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm-extend.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/home/memberUser.css">
+
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current">
+        <!-- 你的html代码 -->
+
+            <!-- 头部 -->
+            <header class="bar bar-nav">
+              <a class="button button-link button-nav pull-left back" href="/demos/tabs">
+                <span class="icon icon-left"></span>
+              </a>
+              <h1 class="title">订单详情</h1>
+            </header>
+
+            <div class="content">
+
+              <div class="tabs" id="notpay_tabs">
+
+                <div id="tab1" class="tab active">
+                  
+                  <div class="order_listall">
+                      <div class="order_list" id="notpay_order_list">
+                        <div class="order_content">
+                          <div class="content_heading">
+                            <div class="heading_left">
+                              <span class="head_num">订单编号:</span>
+                              <span class="head_true">E8888888888888</span>
+                            </div>
+
+
+                            <div class="heading_right">
+                              <span>已确认</span>
+                            </div>
+                          </div>
+                          <div class="content_mid">
+                            <div class="mid_left">
+                              <div class="mid_img">
+                                <img src="../../images/home/u12.png">
+                              </div>
+                            </div>
+
+                            <div class="mid_right">
+                              <div class="mid_title">
+                                <div class="title_span">你好你好你好你aad飒飒大师大师大师大师大师安师大大神的nijhaosasd好你好</div>
+                              </div>
+                              <div class="mid_specifications">
+                               <!--  <div class="s_left">
+                                  <div class="s_left_money">￥1234</div>
+                                  <div class="s_left_num">×123</div>
+                                </div> -->
+                                <div class="s_right">
+                                  <p class="s_right_p">商品规格：</p>你好  索拉卡见识到了空间
+                                </div>
+                                <div class="s_right">
+                                  <p class="s_right_p">使用日期：</p> 2016-01-01
+                                </div>
+                                <div class="s_right">
+                                  <p class="s_right_p">价格：</p> ￥201
+                                </div>
+                                <div class="s_right">
+                                  <p class="s_right_p">数量：</p> 20
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="content_footing">
+                            <div class="foot_tex">
+                              总 金 额： ￥1234
+                            </div>
+                             <!-- <div class="r_btn button button-fill button-danger">立即支付</div>-->
+                            <div class="r_btn button button-dark">申请仲裁</div>
+                            <div class="r_btn button button-dark">评价</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                </div>                                
+              </div>
+
+              <!-- 店铺信息 -->
+              <div class="order_shop">
+                <div class="shop_title">
+                  <div class="title_tex">
+                    店铺信息
+                  </div>
+                </div>
+
+                <div class="shop_mid">
+                  <div class="mid_left">
+                    <img>
+                  </div>
+                  <div class="shop_right">
+                    <p>广州顶峰户外运动俱乐部</p>
+                    <p id="shop_phonenum">400-4000-400</p>
+                  </div>
+                </div>
+
+                <div class="shop_foot">
+                  <div class="foot_btn">
+                    <div class="r_btn button"><img class="shop_img" src="../../images/home/u99.png">进入店铺</div>
+                    <div class="r_btn button right"><img class="shop_img" src="../../images/home/u104.png">联系商家</div>
+                  </div>
+                </div>
+              </div>
+              <!-- 消费验证码 -->
+              <div class="order_code">
+                 <div class="order_code_contacts_mg">
+                  <p>消费验证码:8888888888</p>
+                  <p class="paied">已使用</p>
+                </div>             
+              </div>
+              <!-- 联系 -->
+              <div class="contacts">
+                <div class="contacts_title">
+                  <div class="contacts_title_tex">
+                    联系人
+                  </div>
+                </div>
+                <div class="contacts_mg">
+                  <p>广州顶峰户外运动俱乐部</p>
+                  <p>400-4000-400</p>
+                </div>
+              </div>
+              <!-- Creation time -->
+              <div class="Creation_time" id="cre_successpay">
+                <div class="Creation_time_contacts_mg">
+                  <p>创建时间</p>
+                  <p>支付方式</p>
+                  <p>支付时间</p>
+                  <p>验证时间</p>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src='../../js/home/memeberUser.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src='../../js/home/_memberOrderDetails.min.js'></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<div class="countdown">
+	商家将在<span class="countdown-time" data-time="${userOrderBean.orderTime}"></span>内处理该订单，请耐心等待
+</div>
+<div class="con">
+	<p class="order-code">
+		订单编码：${userOrderBean.orderCode}
+	</p>
+	<div class="info-con info-con2">
+		<!-- for: ${productList} as ${item},${index} -->
+		<div class="item" data-ordercode="${item.productCode}">
+			<div class="info">
+				<h2><a href="#">${item.productName}</a></h2>
+				<p>商品规格：
+					<span>${item.spec}</span>
+				</p>
+				<p>预订数量：
+					<span>x ${item.num}</span>
+				</p>
+				<!-- if: ${userOrderBean.useDate} -->
+				<p class="date">使用日期：${userOrderBean.useDate|timeFormat}</p>
+				<!-- /if -->
+			</div>
+		</div>
+		<!-- /for -->
+	</div>
+	<p class="total-price">
+		应付金额：<span>￥${userOrderBean.orderCountPrice}</span>
+	</p>
+</div>

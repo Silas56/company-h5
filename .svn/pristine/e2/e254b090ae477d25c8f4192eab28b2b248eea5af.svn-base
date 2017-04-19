@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>特色旅游找酷鸟</title>
+    <meta name="Keywords" content="特色旅游,高端旅游,主题旅游,旅游线路,酷鸟"/>
+	<meta name="Description" content="酷鸟旅游网，一个提供特色旅游(旅行)、高端旅游(旅行)、主题旅游(旅行)、旅游线路、旅行线路的旅游网站，特色旅游找酷鸟。" />
+    
+	<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm.css">
+	<!--<link rel="stylesheet" href="../../css/index/styles.css">
+	<link rel="stylesheet" href="../../css/common/style.css">-->
+    <link rel="stylesheet" type="text/css" href="../../css/search/searchProduct.css">
+
+	</head>
+	<body>
+		<div class="page-group">
+     <div class="page page-current" id="searchProduct_page">
+		<!-- 标题栏 -->
+	  <header class="bar bar-nav">
+	    <a class="icon icon-left pull-left open-panel" href="search.html"></a>
+	    <h1 class="title">
+	    	<div class="select-style">
+		    	<select name="category" id="category" class="category">
+		    		<option value="0">产品</option>
+		    		<option value="1">店铺</option>
+		    	</select>
+	    	</div>
+	    	<input type="text" name="cateValue" class="cateValue" placeholder="请输入产品名称" />
+			<span class="clearCateValue"></span>
+	    </h1>
+	    <input type="button" value="搜索" class="btnsearch" />
+	  </header>
+	  
+	  <div class="content">
+       <div class="buttons-tab">
+            <a href="#tab1" class="tab-link active button">综合</a>
+            <a href="#tab2" class="tab-link button">销量</a>
+            <a href="#tab3" class="tab-link button">
+            	<div class="price" sortType="1">
+            	<div class="left">价格</div>
+            	<div class="left">
+            		<div class="arrow1 downarrow"></div>
+            		<div class="arrow2 uparrow"></div>
+            	</div>
+            	</div>
+            </a>
+            
+       </div> 
+            
+       <div class="tabs">
+            <div id="tab1" class="tab active infinite-scroll" pi="0">
+				<div class="datalist"></div>
+				<div class="infinite-scroll-preloader">
+				  <div class="preloader"></div>
+				</div>
+            </div>
+            <div id="tab2" class="tab infinite-scroll" pi="0">
+				<div class="datalist"></div>
+				<div class="infinite-scroll-preloader">
+				  <div class="preloader"></div>
+				</div>
+            </div>
+             <div id="tab3" class="tab infinite-scroll" pi="0">
+				<div class="datalist"></div>
+				<div class="infinite-scroll-preloader">
+				  <div class="preloader"></div>
+				</div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.js' charset='utf-8'></script>
+	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+	<script src="../../js/common/config.js" type="text/javascript"></script>
+    <script src="../../js/search/searchProduct.min.js"></script>
+	<script type="text/javascript">
+        $.init();
+    </script>
+	</body>
+</html>

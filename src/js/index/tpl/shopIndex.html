@@ -1,0 +1,113 @@
+
+<!-- if: ${shopInfo.shopStatus} === 1 -->
+<!-- if: ${shopInfo} -->
+<div class="shop-header">
+    <div class="con">
+      <div class="user">
+          <a href="#"></a>
+      </div>
+      <div class="con-inner">
+	  <!-- if: ${shopInfo.shopLogoImg} -->
+        <img src="${shopInfo.shopLogoImg}"/>
+		<!-- else -->
+		<img src="../../images/home/shop_default.jpg" />
+		<!-- /if -->
+        <div class="name">${shopInfo.shopName}</div>
+        <!-- if: ${shopInfo.score} > 0 -->
+        <!-- <p>
+          <span class="score">
+            <em style="width:${shopInfo.score|scoreFormat}%;"></em>
+          </span>
+          <span>${shopInfo.score}</span>
+        </p> -->
+        <!-- /if -->
+        <div class="collection">收藏</div>
+      </div>
+    </div>
+</div>
+<div class="buttons-tab">
+      <a href="index.html?shopCode=${shopInfo.shopCode}" class="button active">店铺首页</a>
+      <a href="allProducts.html?shopCode=${shopInfo.shopCode}" class="button">全部产品</a>
+      <!-- if:${productList} -->
+      <a href="newRelease.html?shopCode=${shopInfo.shopCode}" class="button">最新上架</a>
+      <!-- /if -->
+      <!-- if:${recommendProduct} -->
+      <a href="recommended.html?shopCode=${shopInfo.shopCode}" class="button">推荐产品</a>
+      <!-- /if -->
+ </div>
+<!-- /if -->
+
+<!-- if:${advImg} -->
+<div class="dpbanner" id="banner">
+    <div class="swiper-container" data-space-between='10'>
+      <div class="swiper-wrapper">
+        <!-- for: ${advImg} as ${item},${index} -->
+        <div class="swiper-slide">
+          <!-- if:${item.productCode} !== '' -->
+          <a href="../detail/detail.html?productCode=${item.productCode}&shopCode=${item.shopCode}"><img src="${item.imgSrc}" alt=""></a>
+          <!-- else -->
+          <a href="#"><img src="${item.imgSrc}" alt=""></a>
+          <!-- /if -->
+        </div>
+        <!-- /for -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+</div>    
+<!-- /if -->
+
+<!-- if: ${recommendProduct}-->
+<div class="recommend-pro">
+  <h2>推荐产品</h2>
+  <!-- for: ${recommendProduct} as ${item}, ${index} -->
+  <div class="item" data-pcode="${item.code}" data-scode="${item.shopCode}">
+    <a href="../detail/detail.html?productCode=${item.code}&shopCode=${item.shopCode}" external>
+      <img src="${item.cover}" alt="${item.name}">
+    </a>
+    <h4><a href="../detail/detail.html?productCode=${item.code}&shopCode=${item.shopCode}" external>${item.name}</a></h4>
+    <p><span>￥${item.minPrice}</span></p>
+  </div>
+  <!-- /for -->
+</div>
+<!-- /if -->
+<!-- if: ${productList} -->
+<div class="latest-pro">
+  <h2>最新上架</h2>
+  <!-- for: ${productList} as ${item}, ${index} -->
+  <div class="item" data-pcode="${item.code}" data-scode="${item.shopCode}">
+    <a href="../detail/detail.html?productCode=${item.code}&shopCode=${item.shopCode}" external>
+      <img src="${item.cover}" alt="${item.name}">
+    </a>
+    <h4><a href="../detail/detail.html?productCode=${item.code}&shopCode=${item.shopCode}" external>${item.name}</a></h4>
+    <p><span>￥${item.minPrice}</span></p>
+  </div>
+  <!-- /for -->
+</div>
+<!-- /if -->
+
+<div class="all-shop-pro">
+  <a href="allProducts.html?shopCode=${shopInfo.shopCode}">查看全部产品</a>
+</div>
+
+<div class="dpfooter">
+    <div class="foo">
+        <p>
+          <span>酷鸟</span>
+          <span>kooniao.com</span>
+        </p>
+        <p>酷鸟提供技术支持</p>
+    </div>
+</div>    
+<!-- else -->
+<div class="shopIndex-pause-container">
+  <div class="con">
+    <div class="shop-icon">
+    </div>
+    <h2>店铺暂停营业</h2>
+    <p>
+      <a href="#" class="knIndex">酷鸟首页</a>
+      <a href="#" extral class="userCenter">用户中心</a>
+    </p>
+  </div>
+</div>
+<!-- /if -->

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>店铺首页</title>
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+       <div class="page-group">
+       <div class="page page-current">
+            <div class="content">
+
+                 <div class="top">
+                      <img src="images/u122.png"/>
+                      <div class="yuan">
+                           <img class="touxiang" src="images/u135.png"/>
+                      </div>
+                      <div class="name">广州顶峰户外运动俱乐部</div>
+                      <span class="score"><em style="width:60%;"></em></span>
+                      <span>3.0</span>
+                      <div class="index_collection" id="collection" onclick="knshoucang()">收藏</div>
+                      <div class="index_collection_after" id="collection_after" onclick="knyishoucang()">已收藏</div>
+                 </div>
+
+                 <div class="buttons-tab">
+                      <a href="index.html" class="button">店铺首页</a>
+                      <a href="allProducts.html" class="button">全部产品</a>
+                      <a href="newRelease.html" class="button">最新上架</a>
+                      <a href="recommended.html" class="button">推荐产品</a>
+                 </div>
+
+             
+                <div class="dpbanner" id="banner">
+                     <a href="#"><img class="d1" src="images/u118.png"/></a>
+                     <a href="#"><img class="d1" src="images/u118.png"/></a> 
+                     <a href="#"><img class="d1" src="images/u118.png"/></a>
+                </div>    
+                
+
+                <div class="index_shoucang" id="success">收藏成功</div>
+                <div class="index_shoucang" id="cancel">取消收藏</div>
+                <div class="tuijian">推荐产品</div>
+
+                 <div class="chanpin">
+                      <img src="images/u133.png"/>         
+                      <div class="chanpin_name">产品名称5</div>
+                      <div class="chanpin_price">¥1000</div>
+                 </div>
+                 <div class="chanpin">
+                      <img src="images/u133.png"/>
+                      <div class="chanpin_name">产品名称6</div>
+                      <div class="chanpin_price">¥2000</div>
+                 </div>
+                 <div class="chanpin">
+                      <img src="images/u133.png"/>         
+                      <div class="chanpin_name">产品名称5</div>
+                      <div class="chanpin_price">¥1000</div>
+                 </div>
+                 <div class="chanpin">
+                      <img src="images/u133.png"/>
+                      <div class="chanpin_name">产品名称6</div>
+                      <div class="chanpin_price">¥2000</div>
+                 </div>       
+                 <div class="chanpin">
+                      <img src="images/u133.png"/>         
+                      <div class="chanpin_name">产品名称5</div>
+                      <div class="chanpin_price">¥1000</div>
+                 </div>
+                 <div class="chanpin">
+                      <img src="images/u133.png"/>
+                      <div class="chanpin_name">产品名称6</div>
+                      <div class="chanpin_price">¥2000</div>
+                 </div> 
+                  
+                 <div class="chakan">查看全部产品</div>
+                 <div class="dpfooter">
+                      <div class="foo">
+                           <img src="images/u22.png"/>
+                           <span class="kooniao">酷鸟</span>
+                           <span class="com">kooniao.com</span>
+                           <span class="quanxian">酷鸟提供技术支持</span>
+                      </div>
+                </div>  
+          </div>
+          
+          <div class="directory_bounced" id="directory_bounced" onmouseout="knout()">
+               <div class="directory"><a href="productCatalog.html">产品目录</a></div>
+               <div class="directory"><a href="productCatalog.html">产品目录</a></div>
+               <div class="directory"><a href="productCatalog.html">产品目录</a></div>
+               <div class="sanjiao"></div>
+          </div>
+          <div class="shouyedibu"> 
+               <a href="#" onclick="kndirectory()"><span>产品目录</span></a>
+               <a href="contactMerchant.html"><span>联系商家</span></a>
+          </div>          
+</div>
+</div>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="js/script.js" charset='utf-8'></script>
+<script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script> 
+<script type="text/javascript" src="js/lunbo.js" charset='utf-8'></script>
+<script type="text/javascript">banner()</script>
+</body>
+</html>

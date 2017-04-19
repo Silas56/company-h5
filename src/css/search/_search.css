@@ -1,0 +1,33 @@
+.btnsearch {
+  border: 0;
+  background-color: white;
+  float: right;
+  padding: 0 auto;
+  line-height: 2rem; }
+
+.button {
+  display: inline;
+  background-color: white; }
+
+.content-block {
+  margin: 0; }
+
+.list-block {
+  margin: 0; }
+
+.list-block .item-media + .item-inner {
+  margin: 0; }
+
+.center {
+  text-align: center;
+  background-color: white;
+  padding: 0.4rem; }
+
+.category {
+  line-height: 1rem;
+  margin-left: 1.5rem; }
+
+.relative {
+  display: none; }
+
+/*# sourceMappingURL=_search.css.map */

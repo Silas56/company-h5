@@ -1,0 +1,238 @@
+var gulp 		 = require('gulp');
+var gutil 		 = require('gulp-util');
+var browserSync	 = require('browser-sync').create() ;
+var reload       = browserSync.reload;
+var sass		 = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var plumber		 = require('gulp-plumber');
+var changed		 = require('gulp-changed');
+var browserify   = require('browserify');
+var through2	 = require('through2');
+var html2string  = require('browserify-html2string');
+var jshint	     = require('gulp-jshint');
+var stylish	     = require('jshint-stylish');
+var rename 		 = require('gulp-rename');
+var map 		 = require('map-stream');
+var gulpif 		 = require('gulp-if');
+var uglify  	 = require('gulp-uglify');
+var imagemin     = require('gulp-imagemin');
+var pngquant 	 = require('imagemin-pngquant'); //png图片压缩插件
+var minifyHtml   = require('gulp-minify-html');
+	
+// 全局路径
+var global = {
+	baseDir 		: '../',
+	css 			: ['../css/*/*.css'],
+	cssBaseDir  	: '../css/',
+	sass 			: ['../css/*/*.scss'],
+	js 				: ['../js/*/*.js','!../js/common/**','!../gulp/**','!../js/*/*.min.js'],
+	jsBaseDir   	: '../js/',
+	html 			: ['../html/*/*.html'],
+	htmlBaseDir 	: '../html/',
+	images  		: ['../images/*/*'],
+	imagesbaseDur 	: '../images/'
+};
+
+	
+	var jshintSuccess = true;
+
+	var exitOnJshintError = map(function (file, cb) {
+
+		  jshintSuccess = true;
+		  if (!file.jshint.success) {
+		    console.error('jshint failed');
+		    jshintSuccess = false;
+		    // process.exit(1);
+		    // return false;
+		  }
+		  cb(null, file);
+		});
+	var jshintConfig = {
+		eqeqeq : false, //强制使用三等号
+		asi	   : false, //允许使用分号
+	}
+
+	//浏览器自动刷新
+	gulp.task('browserSync',function(){
+		
+		var build  		  = gutil.env.build == 'dist' ? true : false;
+		var serverBaseDir = '';
+		if(build){
+			serverBaseDir = globalDist.baseDir;
+		}else{
+			serverBaseDir = global.baseDir;
+		}
+
+		browserSync.init({
+			server:{
+				baseDir:serverBaseDir,
+				directory: true
+			}
+		});
+
+		gulp.watch(global.html).on('change', reload);
+	});
+
+	//sass 编译为css ,添加 autoprefixer ,并且压缩css
+	gulp.task('sass',function(){
+		var build    = gutil.env.build == 'dist' ? true : false;
+		var baseDir  = '';
+
+		if(build){
+			baseDir = globalDist.cssBaseDir;
+		}else{
+			baseDir = global.cssBaseDir;
+		}
+
+		gulp.src(global.sass)
+			.pipe(gulpif(!build,changed(global.cssBaseDir,{extension: ".css"})))
+			// .pipe(changed(global.cssBaseDir,{extension: ".css"}))
+			.pipe(plumber())
+			// .pipe(watchs(global.scss))			
+			.pipe(sass({
+				outputStyle: 'compressed'
+			})
+			.on('error', sass.logError))
+			.pipe(autoprefixer({
+				browsers: ['last 2 versions', 'Android >= 4.0'],
+	            cascade: true, //是否美化属性值 默认：true 像这样：
+	            //-webkit-transform: rotate(45deg);
+	            //        transform: rotate(45deg);
+	            remove:true //是否去掉不必要的前缀 默认：true 
+			}))
+			// .pipe(cssmin())
+			.pipe(gulp.dest(baseDir))
+			.pipe(reload({stream:true}))
+	});
+
+	//browserify 合并js
+	gulp.task('browserify',function(){
+		console.log(gutil.env.dir,'gutil.env.dir');
+		console.log(gutil.env.build,'gutil.env.build');
+		var dir 	 	= gutil.env.dir || null; //编译某个目录
+
+		var build  	    = gutil.env.build == 'dist' ? true : false; //是否是正式环境
+
+		var sourceJs 	= [];
+		var sourceDest  = '';
+
+		var baseDir     = '';
+		var baseJs  	= '';
+
+		if(dir !== null){
+			sourceJs  	= [global.jsBaseDir + dir + '/*.js','!' + global.jsBaseDir + dir  + '/*.min.js'];
+			sourceDest  = global.jsBaseDir + dir + '/';
+			if(build){
+				sourceDest  = globalDist.jsBaseDir + dir + '/';
+			}
+		}else{
+			sourceJs  	= global.js;
+			sourceDest	= global.jsBaseDir;
+			if(build){
+				sourceDest  = globalDist.jsBaseDir;
+			}
+		}
+		// return false;
+		return  gulp.src(sourceJs)
+					.pipe(gulpif(!build,changed(global.jsBaseDir,{extension: ".min.js"})))
+					.pipe(jshint(jshintConfig))
+				    .pipe(jshint.reporter(stylish))
+				    // .pipe(plumber.stop())
+				    // .pipe(exitOnJshintError)
+				    .pipe(map(function(file,cb){
+				    	jshintSuccess = true;
+				    	if(file.jshint.success){
+				    		jshintSuccess = true;
+				    	}else{
+				    		jshintSuccess = false;
+				    	}
+				    	cb(null,file);
+				    }))
+				    // .pipe(plumber())
+			    	.pipe(gulpif(jshintSuccess,through2.obj(function(file, enc, next) {
+			    		// return false;
+			    		console.log(file.path);
+				      	browserify(file.path)
+					        // .transform(reactify)
+					        .transform(html2string)
+					        .bundle(function(err, res) {
+					          err && console.log(err.stack);
+					          file.contents = res;
+					          next(null, file);
+					        })
+				    })))
+				    .on('error',gutil.log)
+			    	.pipe(gulpif(build,uglify().on('error', gutil.log))) // uglify
+			    	.pipe(rename(function(path){
+			    		path.basename += '.min'
+			    	}))
+			    	.pipe(gulp.dest(sourceDest));
+	});
+
+	gulp.task('jshint',function(){
+
+		var dir 	 	= gutil.env.dir || null; //编译某个目录
+
+		if(dir !== null){
+			sourceJs  	= [global.jsBaseDir + dir + '/*.js','!' + global.jsBaseDir + dir  + '/*.min.js'];
+			sourceDest  = global.jsBaseDir + dir + '/';
+		}else{
+			sourceJs  	= [global.jsBaseDir + '*/*.js','!' + global.jsBaseDir  + '*/*.min.js'];
+			sourceDest	= global.jsBaseDir;			
+		}
+
+		return  gulp.src(sourceJs)
+					.pipe(jshint(jshintConfig))
+					.pipe(jshint.reporter(stylish));
+	});
+
+	gulp.task('watch',function(){
+		gulp.watch(global.sass,['sass']);
+		gulp.watch(global.js,['browserify']);
+	});
+
+	//正式环境 
+	//
+
+	// 全局路径
+	var globalDist = {
+		baseDir 		: '../../dist/',
+		cssBaseDir  	: '../../dist/css/',
+		jsBaseDir   	: '../../dist/js/',
+		htmlBaseDir 	: '../../dist/html/',
+		imagesbaseDir 	: '../../dist/images/'
+	};
+
+	gulp.task('minifyHtml',function(){
+		console.log(global.html);
+		gulp.src(global.html)
+			.pipe(minifyHtml())
+			.pipe(gulp.dest(globalDist.htmlBaseDir))
+	});
+
+	gulp.task('imagemin',function(){
+
+		// console.log(global.images)
+		return	gulp.src(global.images)
+					.pipe(imagemin({
+			            progressive: true,
+			            use: [pngquant()] //使用pngquant来压缩png图片
+			        }))
+			        .pipe(gulp.dest(globalDist.imagesbaseDir))
+	});
+
+	gulp.task('uglify-common',function(){
+		return gulp.src(global.jsBaseDir + 'common/*.js')
+				   .pipe(uglify().on('error', gutil.log))
+				   .pipe(gulp.dest(globalDist.jsBaseDir+'common/'))
+	});
+
+	gulp.task('build',['sass','imagemin','uglify-common','minifyHtml','browserify']);
+
+	gulp.task('default',['browserSync','watch']);
+
+	gulp.task('test',['browserify','minifyHtml']);
+
+
+
+	
